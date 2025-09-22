@@ -276,6 +276,9 @@ kfork(void)
   // copy saved user registers.
   *(np->trapframe) = *(p->trapframe);
 
+  // Set default nice value.
+  np -> niceness = 20;
+
   // Cause fork to return 0 in the child.
   np->trapframe->a0 = 0;
 
@@ -685,3 +688,24 @@ procdump(void)
     printf("\n");
   }
 }
+
+
+/* Lab 3 - Logan Gwilt */
+int
+setpriority(int pid, int nice) {
+  struct proc *p;
+
+  for (p = proc; p < &proc[NPROC]; p++) {
+    acquire(&p->lock);
+    if (p->pid == pid) {
+      p->niceness = nice;
+      release(&p->lock);
+      return 0;
+    }
+    release(&p->lock);
+  }
+
+  printf("Unrecognized process...\n");
+  return -1;
+}
+/* ------------------- */

@@ -105,3 +105,22 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+/* Lab 3 - Logan Gwilt */
+uint64
+sys_nice(void)
+{
+  int pid, nice;
+
+  argint(0, &pid);
+  argint(1, &nice);
+  
+  if (nice > 39) {
+    nice = 39;
+  } else if (nice < 0) {
+    nice = 0;
+  }
+  
+  return setpriority(pid, nice);
+}
+/* ------------------- */
