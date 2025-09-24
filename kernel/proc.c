@@ -228,6 +228,8 @@ userinit(void)
 
   p->state = RUNNABLE;
 
+  p->niceness = 20;
+
   release(&p->lock);
 }
 
@@ -707,5 +709,25 @@ setpriority(int pid, int nice) {
 
   printf("Unrecognized process...\n");
   return -1;
+}
+
+int
+cps(void)
+{
+  struct proc *p;
+	
+	// Loop over process table looking for process with pid
+
+	printf("name \t pid \t state \t priority \n");
+	for(p = proc; p < &proc[NPROC]; p++){
+		if(p->state == SLEEPING)
+			printf("%s \t %d \t SLEEEPING \t %d \n", p->name, p->pid, p->niceness);
+		else if(p->state == RUNNING)
+			printf("%s \t %d \t RUNNING \t %d \n", p->name, p->pid, p->niceness);
+		else if(p->state == RUNNABLE)
+			printf("%s \t %d \t RUNNABLE \t %d \n", p->name, p->pid, p->niceness);	
+	}
+	
+	return 22;
 }
 /* ------------------- */

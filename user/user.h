@@ -28,6 +28,8 @@ int uptime(void);
 
 int nice(int, int); // Pid and priority.
 
+int cps(void);
+
 // ulib.c
 int stat(const char*, struct stat*);
 char* strcpy(char*, const char*);

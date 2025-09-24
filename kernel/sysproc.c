@@ -123,4 +123,10 @@ sys_nice(void)
   
   return setpriority(pid, nice);
 }
+
+uint64
+sys_cps(void)
+{
+  return cps();
+}
 /* ------------------- */
