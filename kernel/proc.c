@@ -710,6 +710,7 @@ setpriority(int pid, int nice) {
   printf("Unrecognized process...\n");
   return -1;
 }
+/* ------------------- */
 
 int
 cps(void)
@@ -730,4 +731,4 @@ cps(void)
 	
 	return 22;
 }
-/* ------------------- */
+
