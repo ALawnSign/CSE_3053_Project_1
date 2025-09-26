@@ -31,10 +31,12 @@ int main(int argc, char *argv[])
 			printf("Child %d terminated\n", getpid());
 			break;
 		}
-        /* Lab 3 - Logan Gwilt */
-        wait(0);
-        /* ------------------- */
+        
 	}
+
+	/* Lab 3 - Logan Gwilt */
+        wait(0);
+    /* ------------------- */
     
 	exit(0);
 }

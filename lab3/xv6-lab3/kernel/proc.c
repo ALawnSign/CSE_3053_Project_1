@@ -464,6 +464,7 @@ kwait(uint64 addr)
 //   }
 // }
 
+/* Edited by Joaquin Garcia*/
 void
 scheduler()
 {
@@ -513,6 +514,7 @@ scheduler()
     }
   }
 }
+/* ============ End of Edits ==========================*/
 
 // Switch to scheduler.  Must hold only p->lock
 // and have changed proc->state. Saves and restores
@@ -762,6 +764,8 @@ setpriority(int pid, int nice) {
 }
 /* ------------------- */
 
+
+/* Edited by Joaquin Garcia*/
 int
 cps(void)
 {
@@ -771,14 +775,18 @@ cps(void)
 
 	printf("name \t pid \t state \t priority \n");
 	for(p = proc; p < &proc[NPROC]; p++){
+    acquire(&p->lock);
 		if(p->state == SLEEPING)
 			printf("%s \t %d \t SLEEEPING \t %d \n", p->name, p->pid, p->niceness);
 		else if(p->state == RUNNING)
 			printf("%s \t %d \t RUNNING \t %d \n", p->name, p->pid, p->niceness);
 		else if(p->state == RUNNABLE)
-			printf("%s \t %d \t RUNNABLE \t %d \n", p->name, p->pid, p->niceness);	
+			printf("%s \t %d \t RUNNABLE \t %d \n", p->name, p->pid, p->niceness);
+      
+    release(&p->lock);
 	}
-	
+
 	return 22;
 }
 
+/* ======================= End of Edits ================================*/
