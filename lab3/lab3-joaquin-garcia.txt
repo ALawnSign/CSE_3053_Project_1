@@ -1,0 +1,24 @@
+time-logging-lab3-joaquin-garcia
+
+ESTIMATE of time to complete lab: 5.5 hours
+
+
+            Start     Time     Lab
+Date        Time      Spent    Part   Work Completed
+------      ------    ------   -----  ----------------
+9/17        14:25     0:05     1      Read task details
+9/17        14:30     0:15     1      Completed implementation of cps syscall
+9/23        16:00     0:30     4      Read task details and started editing scheduler() in proc.c
+9/25        07:00     0:45     4      Tried to fix the errors encountered when working on task 4 on 9/23.
+9/26        14:15     0:30     4      Completed task 4
+9/27        13:00     0:15     5      Worked on completing lab report for the lab
+                     -------
+                      2:20   TOTAL time spent
+                      
+                      
+One major difficulty that I had when trying to complete this lab was figuring out how scheduler was working 
+before and then editing it to be able to successfully implement priority scheduling. Furthermore, I also had 
+to be able to keep the functionality that it was providing as a whole before I made the edits. This meant a lot 
+of trial and error with the system before I was able to successfully compile the program. In addition, there 
+were a lot of c functions that were being used that I was unfamiliar with so in order to overcome this I had to 
+do some research on what they were and how they worked so I wouldn't break the system.
