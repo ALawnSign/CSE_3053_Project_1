@@ -1,0 +1,14 @@
+ESTIMATE of time to complete lab: 4 hours
+        
+        Start   Time    Lab
+Date    Time    Spent   Part    Work Completed
+----------------------------------------------
+9/20    17:00   0:10    2       Got everything copied over, up, and working. Also renamed "setpriority" to "nice", as required.
+9/21    19:00   0:10    3       Edited lab3test properly and added to lab report.
+9/26    14:00   1:00    4       Helped Joaquin iron out things with the scheduler.
+                ----
+                1:20    TOTAL time spent
+
+Major Difficulties: Most of the difficulties that I ran into was when I was working with Joaquin on ironing out the kinks on getting ps to work properly
+for the lab example of part 4. Ultimately however, it ended up that ps was, in fact, working properly, though only printing when the previous processes
+that had the same priority level finished first, since we're working with a FCFS essentially, doing what we are.
